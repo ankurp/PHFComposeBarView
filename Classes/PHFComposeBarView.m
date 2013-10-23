@@ -72,6 +72,15 @@ static CGFloat kTextViewToSuperviewHeightDelta;
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    
+    [self calculateRuntimeConstants];
+    [self setup];
+    
+    return self;
+}
+
 - (BOOL)becomeFirstResponder {
     return [[self textView] becomeFirstResponder];
 }
